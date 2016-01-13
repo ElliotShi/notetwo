@@ -1,0 +1,67 @@
+.container{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	height: 400px;
+	padding-top: 50px;
+}
+
+.left{
+	flex: 1 2;
+	justify-content: center;
+}
+
+.right{
+	flex: 2 1;
+	height: 100%;
+
+}
+
+#noteText{
+	width: 100%;
+	height: 100%;
+}
+
+.button{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+
+.button button{
+	width: 100%;
+	margin-right:5px;
+}
+
+a{
+	text-overflow:ellipsis; 
+	white-space: nowrap;
+	overflow: hidden; 
+}
+
+p{
+	color: gray;
+	font-size: 6px;
+	text-align: right;
+	margin: 0;
+	padding: 0;
+}
+
+.infoAndEdit{
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.infoAndEdit button{
+	margin-right:5px;
+	transition: all 1s ease-in-out;
+}
+
+.infoAndEdit div{
+	text-align: right;
+	margin-top: 8px;
+}
+

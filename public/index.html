@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/main.css">
+		<title>Note</title>
+	</head>
+	<body ng-app="notetwo">
+		<div class="container" ng-controller="noteControl">
+			<div class="left">				
+				<ul ng-repeat="note in notelist" class="nav nav-pills nav-stacked">
+					<li><a href="#" ng-click="show(note._id)">{{note.content}}</a></li>
+				</ul>
+				<div class="button">
+					<button class="btn btn-primary" ng-click="create()">Create New</button>
+				</div>
+			</div>
+			<div class="right">
+				<textarea id="noteText" class="form-control" ng-model="note.content" ng-readonly="textareaEdit"></textarea>
+				<div class="infoAndEdit">
+					<p ng-hide="p4Date">Created on {{note.createDate | date:'medium'}}, Last updated on {{note.updateDate | date:'medium'}}</p>
+					<div class="forEdit" ng-hide="div4Edit">
+						<button class="btn btn-primary" ng-click="edit()" id="test01">Edit</button>
+						<button class="btn btn-warning" ng-click="update(note._id)">Update</button>
+						<button class="btn btn-danger" ng-click="remove(note._id)">Remove</button>
+					</div>
+					<div class="forSave" ng-show="div4Save">
+						<button class="btn btn-danger" ng-click="save()">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+		<script src="/js/controller.js"></script>
+	</body>
+</html>
